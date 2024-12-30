@@ -1,20 +1,19 @@
 package com.arupkhanra.advanceSpringbootFeaturesAZ.service;
 
 import com.arupkhanra.advanceSpringbootFeaturesAZ.entity.JournalEntry;
+import com.arupkhanra.advanceSpringbootFeaturesAZ.entity.User;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface JournalEntryService {
 
-    JournalEntry createJournalEntry(JournalEntry journalEntry, String user);
-
-    //void createJournalEntry(JournalEntry journalEntry);
-
     List<JournalEntry> getAllJournal();
-    JournalEntry getJournalId(int journalId);
+    JournalEntry createJournalEntry(JournalEntry journalEntry, String user);
+    Optional<JournalEntry> findById(Long id);
+    List<JournalEntry> findByUserName(String userName);
 
-    int removeId(int deleteId, String userName);
+    boolean deleteById(Long myId, String userName);
 
-    JournalEntry updateJournalEntry(String userName,int id, JournalEntry updatedEntry);
-
+    void saveEntry(JournalEntry journalEntry);
 }

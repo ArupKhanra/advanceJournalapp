@@ -21,5 +21,5 @@ public class AdvanceSpringbootFeaturesAzApplication {
 }
 
 /*
-		*  http://localhost:8081/swagger-ui/index.html   -- url, check your API documentations
+		*  http://localhost:8081/swagger-ui/index.html   -- swagger url, check your API documentations
  */

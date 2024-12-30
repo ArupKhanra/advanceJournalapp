@@ -26,12 +26,10 @@ public class UserController {
     public ResponseEntity<?> updateUser(@RequestBody User updatedUser) {
         String authenticatedUserName =SecurityContextHolder.getContext().getAuthentication().getName(); // Username from Basic Auth
 
-        // Ensure the authenticated user matches the user to be updated
         if (!authenticatedUserName.equals(updatedUser.getUserName())) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN)
                     .body("You are not authorized to update this user's information.");
         }
-        // Proceed with the update
         User updated = userService.updateUser(updatedUser);
         return ResponseEntity.ok(updated);
     }

@@ -17,19 +17,14 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     private static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
     @Override
-    public User createUser(User user) {
-        log.info("Attempting to save user with ID: {}", user.getUserId());
+    public User saveNewUser(User user) {
 
         try {
             user.setPassword(PASSWORD_ENCODER.encode(user.getPassword()));
-            user.setRoles(Arrays.asList("USER"));  // Set roles before saving
-
+            user.setRoles(Arrays.asList("USER"));
             User userEntry = userRepository.save(user);
-            log.info("Successfully saved user with ID: {}", userEntry.getUserId());
-
             return userEntry;
         } catch (Exception e) {
-            log.error("Error while saving user: ", e);
             throw new RuntimeException("Error while saving user: " + e.getMessage(), e);
         }
     }
@@ -40,13 +35,23 @@ public class UserServiceImpl implements UserService {
             existingUser.setPassword(PASSWORD_ENCODER.encode(updatedUser.getPassword())); // Update password
             // Update other fields as needed
             User savedUser = userRepository.save(existingUser);
-            log.info("Successfully updated user with ID: {}", savedUser.getUserId());
+            log.info("Successfully updated user with ID: {}", savedUser.getId());
             userRepository.save(savedUser);
             return savedUser;
         } else {
             log.error("User with username {} not found for update.", updatedUser.getUserName());
             throw new UserNotFoundException("User with username " + updatedUser.getUserName() + " not found.");
         }
+    }
+
+    @Override
+    public void saveUser(User user) {
+        userRepository.save(user);
+    }
+
+    @Override
+    public User findByUserName(String userName) {
+        return userRepository.findByUserName(userName);
     }
 
 }

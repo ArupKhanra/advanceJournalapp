@@ -1,8 +1,9 @@
 package com.arupkhanra.advanceSpringbootFeaturesAZ.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.sun.istack.NotNull;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.*;
@@ -12,27 +13,25 @@ import java.util.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "users", indexes = {
-        @Index(name = "idx_username", columnList = "username", unique = true)
-})
+@Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = "userName"))
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userId;
 
-    @Column(unique = true, nullable = false)
+    @Id
+    private Long id;
+
+    @Column(nullable = false, unique = true)
     private String userName;
 
-    @NotNull  // Ensure password is not null at the database level
+    @Column(nullable = false)
     private String password;
 
-    // Mapped by the 'user' field in JournalEntry
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    @JsonManagedReference
+    @OneToMany( cascade = CascadeType.ALL, orphanRemoval = true)
     private List<JournalEntry> journalEntries = new ArrayList<>();
 
-    @ElementCollection(fetch = FetchType.EAGER)  // Eager loading to avoid lazy initialization issues
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "role")
-    private List<String> roles = new ArrayList<>();  // Consider using ImmutableList for immutability
+    private List<String> roles = new ArrayList<>();
+
+    // Additional constructors, methods, or logic can be added here if needed
 }
