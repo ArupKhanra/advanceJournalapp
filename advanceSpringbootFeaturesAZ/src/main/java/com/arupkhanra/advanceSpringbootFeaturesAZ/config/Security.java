@@ -32,6 +32,7 @@ public class Security extends WebSecurityConfigurerAdapter {
                 // Authorization rules
                 .authorizeRequests()
                 .antMatchers("/journal/**", "/user/**").authenticated() // Secure these endpoints
+                .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().permitAll() // Allow all other endpoints
                 .and()
                 // Enable HTTP Basic authentication

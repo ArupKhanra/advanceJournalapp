@@ -54,4 +54,22 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByUserName(userName);
     }
 
+    @Override
+    public List<User> getAll() {
+        return userRepository.findAll();
+    }
+
+    @Override
+    public User saveNewAdmin(User user) {
+
+        try {
+            user.setPassword(PASSWORD_ENCODER.encode(user.getPassword()));
+            user.setRoles(Arrays.asList("User","ADMIN"));
+            User userEntry = userRepository.save(user);
+            return userEntry;
+        } catch (Exception e) {
+            throw new RuntimeException("Error while saving user: " + e.getMessage(), e);
+        }
+    }
+
 }
