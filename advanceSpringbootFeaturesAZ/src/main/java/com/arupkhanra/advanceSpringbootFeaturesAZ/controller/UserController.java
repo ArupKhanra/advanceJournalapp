@@ -1,6 +1,8 @@
 package com.arupkhanra.advanceSpringbootFeaturesAZ.controller;
 
 import com.arupkhanra.advanceSpringbootFeaturesAZ.entity.User;
+import com.arupkhanra.advanceSpringbootFeaturesAZ.externalAPI.WeatherResponse;
+import com.arupkhanra.advanceSpringbootFeaturesAZ.externalAPI.WeatherService;
 import com.arupkhanra.advanceSpringbootFeaturesAZ.repository.UserRepository;
 import com.arupkhanra.advanceSpringbootFeaturesAZ.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +22,9 @@ public class UserController {
     private UserService userService;
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private WeatherService weatherService;
 
     @PutMapping("/update")
     public ResponseEntity<?> updateUser(@RequestBody User updatedUser) {
@@ -59,5 +64,24 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Failed to delete user. Please try again later.");
         }
+    }
+    @GetMapping("/weatherAPI")
+    public ResponseEntity<?> greeting() {
+        String name = SecurityContextHolder.getContext().getAuthentication().getName();
+        String greeting = "Hi " + name;
+        try {
+            WeatherResponse weatherResponse = weatherService.getWeather("kolkata");
+
+            if (weatherResponse != null && weatherResponse.getCurrent() != null) {
+                greeting += ", weather feels like " + weatherResponse.getCurrent().getFeelsLike() + "°C";
+            } else {
+                log.warn("No weather data available for Kolkata.");
+            }
+        } catch (Exception e) {
+            log.error("Error occurred while fetching weather data", e);
+            greeting += ", but we couldn't fetch the weather information at the moment.";
+        }
+
+        return new ResponseEntity<>(greeting, HttpStatus.OK);
     }
 }
