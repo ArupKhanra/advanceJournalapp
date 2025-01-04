@@ -1,7 +1,5 @@
 package com.arupkhanra.advanceSpringbootFeaturesAZ.config;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,7 +31,6 @@ public class Security extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/journal/**", "/user/**").authenticated() // Secure these endpoints
                 .antMatchers("/admin/**").hasRole("ADMIN")
-                .anyRequest().permitAll() // Allow all other endpoints
                 .and()
                 // Enable HTTP Basic authentication
                 .httpBasic()

@@ -1,16 +1,10 @@
 package com.arupkhanra.advanceSpringbootFeaturesAZ;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-//@SpringBootApplication
-@Configuration
-@EnableAutoConfiguration
-@ComponentScan
+@SpringBootApplication
 @EnableTransactionManagement
 public class AdvanceSpringbootFeaturesAzApplication {
 
