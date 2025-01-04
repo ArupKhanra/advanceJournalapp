@@ -569,3 +569,141 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'we
 2025-01-04 16:03:52 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-01-04 16:03:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-01-04 16:03:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-01-04 16:03:58 [main] INFO  c.a.a.AdvanceSpringbootFeaturesAzApplication - Starting AdvanceSpringbootFeaturesAzApplication using Java 17.0.8.1 on ARUPKHANRA with PID 2116 (D:\DelyCodeBuffer\advanceSpringBootAZ\advanceSpringbootFeaturesAZ\advanceSpringbootFeaturesAZ\target\classes started by arupk in D:\DelyCodeBuffer\advanceSpringBootAZ\advanceSpringbootFeaturesAZ\advanceSpringbootFeaturesAZ)
+2025-01-04 16:03:58 [main] INFO  c.a.a.AdvanceSpringbootFeaturesAzApplication - The following 1 profile is active: "dev"
+2025-01-04 16:04:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-04 16:04:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 2 JPA repository interfaces.
+2025-01-04 16:04:01 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2025-01-04 16:04:01 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-01-04 16:04:01 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-04 16:04:01 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.69]
+2025-01-04 16:04:01 [main] INFO  o.a.c.c.C.[.[.[/arupkhanra] - Initializing Spring embedded WebApplicationContext
+2025-01-04 16:04:01 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2339 ms
+2025-01-04 16:04:01 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-04 16:04:01 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+2025-01-04 16:04:02 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-01-04 16:04:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-04 16:04:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-04 16:04:02 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-01-04 16:04:05 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-01-04 16:04:05 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-04 16:04:06 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-04 16:04:06 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@61c3d7ac, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4bc9389, org.springframework.security.web.context.SecurityContextPersistenceFilter@426940f9, org.springframework.security.web.header.HeaderWriterFilter@611a91df, org.springframework.security.web.authentication.logout.LogoutFilter@10230657, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5a5a973c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@63d75087, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61555218, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30221cfa, org.springframework.security.web.session.SessionManagementFilter@951e911, org.springframework.security.web.access.ExceptionTranslationFilter@63e0057a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@eee26bd]
+2025-01-04 16:04:07 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-01-04 16:04:07 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path '/arupkhanra'
+2025-01-04 16:04:07 [main] INFO  c.a.a.AdvanceSpringbootFeaturesAzApplication - Started AdvanceSpringbootFeaturesAzApplication in 8.723 seconds (JVM running for 9.442)
+2025-01-04 16:04:11 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[.[.[/arupkhanra] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-04 16:04:11 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-04 16:04:11 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-01-04 16:04:12 [http-nio-8081-exec-2] INFO  c.a.a.c.CustomUserDetailsServiceImpl - Attempting to load user by username: vipul
+2025-01-04 16:04:12 [http-nio-8081-exec-2] INFO  c.a.a.externalAPI.WeatherService - Weather API URL: http://api.weatherstack.com/current?access_key=8feb25615999ef5bf9265d360179d9ab&query=kolkata
+2025-01-04 16:04:13 [http-nio-8081-exec-2] INFO  c.a.a.externalAPI.WeatherService - Weather API Response: WeatherResponse{current=Current{temperature=24, weatherDescriptions=[Haze], feelsLike=25}}
+2025-01-04 17:52:47 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-04 17:52:47 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-01-04 17:52:47 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-01-04 17:53:04 [main] INFO  c.a.a.AdvanceSpringbootFeaturesAzApplication - Starting AdvanceSpringbootFeaturesAzApplication using Java 17.0.8.1 on ARUPKHANRA with PID 26572 (D:\DelyCodeBuffer\advanceSpringBootAZ\advanceSpringbootFeaturesAZ\advanceSpringbootFeaturesAZ\target\classes started by arupk in D:\DelyCodeBuffer\advanceSpringBootAZ\advanceSpringbootFeaturesAZ\advanceSpringbootFeaturesAZ)
+2025-01-04 17:53:04 [main] INFO  c.a.a.AdvanceSpringbootFeaturesAzApplication - The following 1 profile is active: "dev"
+2025-01-04 17:53:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-04 17:53:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 2 JPA repository interfaces.
+2025-01-04 17:53:08 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2025-01-04 17:53:08 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-01-04 17:53:08 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-04 17:53:08 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.69]
+2025-01-04 17:53:08 [main] INFO  o.a.c.c.C.[.[.[/arupkhanra] - Initializing Spring embedded WebApplicationContext
+2025-01-04 17:53:08 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3747 ms
+2025-01-04 17:53:08 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-04 17:53:08 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+2025-01-04 17:53:09 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-01-04 17:53:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-04 17:53:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-04 17:53:09 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-01-04 17:53:10 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-01-04 17:53:10 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-04 17:53:11 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-04 17:53:11 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation is not supported on static fields: private static final java.lang.String com.arupkhanra.advanceSpringbootFeaturesAZ.externalAPI.WeatherService.apiKey
+2025-01-04 17:53:11 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@61c3d7ac, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4bc9389, org.springframework.security.web.context.SecurityContextPersistenceFilter@3cb376a3, org.springframework.security.web.header.HeaderWriterFilter@63e0057a, org.springframework.security.web.authentication.logout.LogoutFilter@160cf225, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5a5a973c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@426940f9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79aba813, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30221cfa, org.springframework.security.web.session.SessionManagementFilter@4d6027be, org.springframework.security.web.access.ExceptionTranslationFilter@1cf4d454, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@eee26bd]
+2025-01-04 17:53:12 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-01-04 17:53:12 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path '/arupkhanra'
+2025-01-04 17:53:12 [main] INFO  c.a.a.AdvanceSpringbootFeaturesAzApplication - Started AdvanceSpringbootFeaturesAzApplication in 8.353 seconds (JVM running for 9.185)
+2025-01-04 17:53:31 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[.[.[/arupkhanra] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-04 17:53:31 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-04 17:53:31 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-01-04 17:53:31 [http-nio-8081-exec-2] INFO  c.a.a.c.CustomUserDetailsServiceImpl - Attempting to load user by username: vipul
+2025-01-04 17:53:31 [http-nio-8081-exec-2] INFO  c.a.a.externalAPI.WeatherService - Weather API URL: http://api.weatherstack.com/current?access_key=&query=kolkata
+2025-01-04 17:53:32 [http-nio-8081-exec-2] ERROR c.a.a.externalAPI.WeatherService - Error: Weather data is empty or malformed.
+2025-01-04 17:53:32 [http-nio-8081-exec-2] WARN  c.a.a.controller.UserController - No weather data available for Kolkata.
+2025-01-04 17:54:23 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-04 17:54:23 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-01-04 17:54:23 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-01-04 17:54:29 [main] INFO  c.a.a.AdvanceSpringbootFeaturesAzApplication - Starting AdvanceSpringbootFeaturesAzApplication using Java 17.0.8.1 on ARUPKHANRA with PID 24680 (D:\DelyCodeBuffer\advanceSpringBootAZ\advanceSpringbootFeaturesAZ\advanceSpringbootFeaturesAZ\target\classes started by arupk in D:\DelyCodeBuffer\advanceSpringBootAZ\advanceSpringbootFeaturesAZ\advanceSpringbootFeaturesAZ)
+2025-01-04 17:54:29 [main] INFO  c.a.a.AdvanceSpringbootFeaturesAzApplication - The following 1 profile is active: "dev"
+2025-01-04 17:54:30 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-04 17:54:30 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 2 JPA repository interfaces.
+2025-01-04 17:54:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2025-01-04 17:54:31 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-01-04 17:54:31 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-04 17:54:31 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.69]
+2025-01-04 17:54:31 [main] INFO  o.a.c.c.C.[.[.[/arupkhanra] - Initializing Spring embedded WebApplicationContext
+2025-01-04 17:54:31 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2320 ms
+2025-01-04 17:54:31 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-04 17:54:31 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+2025-01-04 17:54:32 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-01-04 17:54:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-04 17:54:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-04 17:54:32 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-01-04 17:54:33 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-01-04 17:54:33 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-04 17:54:34 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-04 17:54:34 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation is not supported on static fields: private static java.lang.String com.arupkhanra.advanceSpringbootFeaturesAZ.externalAPI.WeatherService.apiKey
+2025-01-04 17:54:35 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@61c3d7ac, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4bc9389, org.springframework.security.web.context.SecurityContextPersistenceFilter@3cb376a3, org.springframework.security.web.header.HeaderWriterFilter@63e0057a, org.springframework.security.web.authentication.logout.LogoutFilter@160cf225, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5a5a973c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@426940f9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79aba813, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30221cfa, org.springframework.security.web.session.SessionManagementFilter@4d6027be, org.springframework.security.web.access.ExceptionTranslationFilter@1cf4d454, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@eee26bd]
+2025-01-04 17:54:35 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-01-04 17:54:35 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path '/arupkhanra'
+2025-01-04 17:54:35 [main] INFO  c.a.a.AdvanceSpringbootFeaturesAzApplication - Started AdvanceSpringbootFeaturesAzApplication in 7.198 seconds (JVM running for 7.912)
+2025-01-04 17:54:40 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[.[.[/arupkhanra] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-04 17:54:40 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-04 17:54:40 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-01-04 17:54:41 [http-nio-8081-exec-2] INFO  c.a.a.c.CustomUserDetailsServiceImpl - Attempting to load user by username: vipul
+2025-01-04 17:54:41 [http-nio-8081-exec-2] INFO  c.a.a.externalAPI.WeatherService - Weather API URL: http://api.weatherstack.com/current?access_key&query=kolkata
+2025-01-04 17:54:42 [http-nio-8081-exec-2] ERROR c.a.a.externalAPI.WeatherService - Error: Weather data is empty or malformed.
+2025-01-04 17:54:42 [http-nio-8081-exec-2] WARN  c.a.a.controller.UserController - No weather data available for Kolkata.
+2025-01-04 17:54:44 [http-nio-8081-exec-3] INFO  c.a.a.c.CustomUserDetailsServiceImpl - Attempting to load user by username: vipul
+2025-01-04 17:54:44 [http-nio-8081-exec-3] INFO  c.a.a.externalAPI.WeatherService - Weather API URL: http://api.weatherstack.com/current?access_key&query=kolkata
+2025-01-04 17:54:44 [http-nio-8081-exec-3] ERROR c.a.a.externalAPI.WeatherService - Error: Weather data is empty or malformed.
+2025-01-04 17:54:44 [http-nio-8081-exec-3] WARN  c.a.a.controller.UserController - No weather data available for Kolkata.
+2025-01-04 18:03:00 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-04 18:03:00 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-01-04 18:03:00 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-01-04 18:03:06 [main] INFO  c.a.a.AdvanceSpringbootFeaturesAzApplication - Starting AdvanceSpringbootFeaturesAzApplication using Java 17.0.8.1 on ARUPKHANRA with PID 28592 (D:\DelyCodeBuffer\advanceSpringBootAZ\advanceSpringbootFeaturesAZ\advanceSpringbootFeaturesAZ\target\classes started by arupk in D:\DelyCodeBuffer\advanceSpringBootAZ\advanceSpringbootFeaturesAZ\advanceSpringbootFeaturesAZ)
+2025-01-04 18:03:06 [main] INFO  c.a.a.AdvanceSpringbootFeaturesAzApplication - The following 1 profile is active: "dev"
+2025-01-04 18:03:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-04 18:03:08 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 81 ms. Found 2 JPA repository interfaces.
+2025-01-04 18:03:11 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2025-01-04 18:03:11 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-01-04 18:03:11 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-04 18:03:11 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.69]
+2025-01-04 18:03:11 [main] INFO  o.a.c.c.C.[.[.[/arupkhanra] - Initializing Spring embedded WebApplicationContext
+2025-01-04 18:03:11 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4666 ms
+2025-01-04 18:03:11 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-04 18:03:11 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+2025-01-04 18:03:11 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-01-04 18:03:12 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-04 18:03:12 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-04 18:03:12 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-01-04 18:03:13 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-01-04 18:03:13 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-04 18:03:14 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-04 18:03:14 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation is not supported on static fields: private static java.lang.String com.arupkhanra.advanceSpringbootFeaturesAZ.externalAPI.WeatherService.apiKey
+2025-01-04 18:03:14 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@15c96f24, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24482a4f, org.springframework.security.web.context.SecurityContextPersistenceFilter@5bddd141, org.springframework.security.web.header.HeaderWriterFilter@2a5ed225, org.springframework.security.web.authentication.logout.LogoutFilter@3d5e0bf0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@eb1e868, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@475eb4fd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@447630c4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3140ad41, org.springframework.security.web.session.SessionManagementFilter@5c194652, org.springframework.security.web.access.ExceptionTranslationFilter@10e4ce98, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@67e628b]
+2025-01-04 18:03:15 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-01-04 18:03:15 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path '/arupkhanra'
+2025-01-04 18:03:15 [main] INFO  c.a.a.AdvanceSpringbootFeaturesAzApplication - Started AdvanceSpringbootFeaturesAzApplication in 9.433 seconds (JVM running for 10.405)
+2025-01-04 18:03:21 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[.[.[/arupkhanra] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-04 18:03:21 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-04 18:03:21 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-01-04 18:03:21 [http-nio-8081-exec-1] INFO  c.a.a.c.CustomUserDetailsServiceImpl - Attempting to load user by username: vipul
+2025-01-04 18:03:22 [http-nio-8081-exec-1] INFO  c.a.a.externalAPI.WeatherService - Weather API URL: http://api.weatherstack.com/current?access_key&query=kolkata
+2025-01-04 18:03:22 [http-nio-8081-exec-1] ERROR c.a.a.externalAPI.WeatherService - Error: Weather data is empty or malformed.
+2025-01-04 18:03:22 [http-nio-8081-exec-1] WARN  c.a.a.controller.UserController - No weather data available for Kolkata.
+2025-01-04 18:08:12 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-04 18:08:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-01-04 18:08:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

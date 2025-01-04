@@ -4,13 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Component
+@Service
 public class WeatherService {
 
     private static final Logger logger = LoggerFactory.getLogger(WeatherService.class);
@@ -18,13 +18,10 @@ public class WeatherService {
     @Autowired
     private RestTemplate restTemplate;
 
-    // Externalized configuration for API key and endpoint
-//    @Value("${weather.api.key}")
-    private static final String apiKey = "8feb25615999ef5bf9265d360179d9ab";
-
     private static final String API = "http://api.weatherstack.com/current";
 
     public WeatherResponse getWeather(String city) {
+        String apiKey = System.getenv("WEATHER_API_KEY");
         // Validate city parameter
         if (city == null || city.isEmpty()) {
             logger.error("City name is null or empty.");
