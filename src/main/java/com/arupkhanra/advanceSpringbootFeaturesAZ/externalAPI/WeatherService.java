@@ -1,6 +1,7 @@
 package com.arupkhanra.advanceSpringbootFeaturesAZ.externalAPI;
 
 
+import com.arupkhanra.advanceSpringbootFeaturesAZ.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
@@ -18,6 +19,9 @@ public class WeatherService {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private RedisService redisService;
 
 //    @Autowired
 //    private AppCache appCache;
@@ -43,16 +47,28 @@ public class WeatherService {
         // Make the API call and log the response
         ResponseEntity<WeatherResponse> response = restTemplate.exchange(url, HttpMethod.GET, null, WeatherResponse.class);
 
-        // Process and log the response body
-        WeatherResponse weatherResponse = response.getBody();
-        if (weatherResponse != null && weatherResponse.getCurrent() != null) {
-            logger.info("Weather API Response: {}", weatherResponse);
-        } else {
-            logger.error("Error: Weather data is empty or malformed.");
-            return null;
-        }
+        WeatherResponse weatherResponseCase = redisService.get("Weather_of_"+city, WeatherResponse.class);
+        if(weatherResponseCase != null){
+            return weatherResponseCase;
 
-        return weatherResponse;
+        }else{
+
+            WeatherResponse weatherResponse = response.getBody();
+            if (weatherResponse != null && weatherResponse.getCurrent() != null) {
+                logger.info("Weather API Response: {}", weatherResponse);
+            } else {
+                logger.error("Error: Weather data is empty or malformed.");
+                return null;
+            }
+            if(weatherResponse!= null){
+                redisService.set("Weather_of_"+city,weatherResponse,300l);
+            }
+            return weatherResponse;
+        }
+        // Process and log the response body
+
+
+
     }
 
 }
