@@ -36,16 +36,4 @@ public class AdminController {
         }
     }
 
-    @PostMapping("/create-new-admin")
-    public ResponseEntity<User> createUser(@RequestBody User newAdmin) {
-        log.info("Received request to create a new admin user: {}", newAdmin.getUserName());
-        try {
-            User admin = userService.saveNewAdmin(newAdmin);
-            log.info("Successfully created admin user with ID: {}", admin.getId());
-            return new ResponseEntity<>(admin, HttpStatus.CREATED);
-        } catch (Exception e) {
-            log.error("Error occurred while creating admin user: {}", e.getMessage(), e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 }

@@ -20,9 +20,6 @@ public class Security extends WebSecurityConfigurerAdapter {
 
     /**
      * Configures HTTP security, setting up basic authentication and authorization rules.
-     *
-     * @param http the HttpSecurity object to configure.
-     * @throws Exception in case of any configuration errors.
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {

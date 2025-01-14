@@ -2,6 +2,7 @@ package com.arupkhanra.advanceSpringbootFeaturesAZ.controller;
 
 import com.arupkhanra.advanceSpringbootFeaturesAZ.entity.User;
 import com.arupkhanra.advanceSpringbootFeaturesAZ.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/public")
+@Slf4j
 public class PublicController {
 
     private static final Logger logger = LoggerFactory.getLogger(PublicController.class);
@@ -45,6 +47,20 @@ public class PublicController {
         healthStatus.put("timestamp", System.currentTimeMillis());
         logger.info("Health check response: {}", healthStatus);
         return ResponseEntity.ok(healthStatus);
+    }
+
+
+    @PostMapping("/create-new-admin")
+    public ResponseEntity<User> createAdmin(@RequestBody User newAdmin) {
+        log.info("Received request to create a new admin user: {}", newAdmin.getUserName());
+        try {
+            User admin = userService.saveNewAdmin(newAdmin);
+            log.info("Successfully created admin user with ID: {}", admin.getId());
+            return new ResponseEntity<>(admin, HttpStatus.CREATED);
+        } catch (Exception e) {
+            log.error("Error occurred while creating admin user: {}", e.getMessage(), e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @GetMapping

@@ -1,5 +1,6 @@
 package com.arupkhanra.advanceSpringbootFeaturesAZ.entity;
 
+import com.arupkhanra.advanceSpringbootFeaturesAZ.Enum.Sentiment;
 import lombok.*;
 
 import javax.persistence.*;
@@ -24,6 +25,9 @@ public class JournalEntry {
     private String content;
 
     private LocalDateTime date;
+
+    @Enumerated(EnumType.STRING)
+    private Sentiment sentiment;
 
 
 }
