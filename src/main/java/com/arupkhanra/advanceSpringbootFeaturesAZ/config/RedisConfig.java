@@ -10,11 +10,19 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 public class RedisConfig {
 
     @Bean
-    public RedisTemplate redisTemplate(RedisConnectionFactory factory){
-        RedisTemplate redisTemplate = new RedisTemplate();
+    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+
+        // Set the connection factory
         redisTemplate.setConnectionFactory(factory);
+
+        // Use String serializers for keys and values
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setValueSerializer(new StringRedisSerializer());
+
+        // Enable transaction support if needed
+        redisTemplate.setEnableTransactionSupport(true);
+
         return redisTemplate;
     }
 }

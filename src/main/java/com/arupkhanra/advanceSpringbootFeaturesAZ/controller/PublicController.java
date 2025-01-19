@@ -1,11 +1,16 @@
 package com.arupkhanra.advanceSpringbootFeaturesAZ.controller;
 
+import com.arupkhanra.advanceSpringbootFeaturesAZ.config.CustomUserDetailsServiceImpl;
 import com.arupkhanra.advanceSpringbootFeaturesAZ.entity.User;
 import com.arupkhanra.advanceSpringbootFeaturesAZ.service.UserService;
+import com.arupkhanra.advanceSpringbootFeaturesAZ.utils.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,10 +28,15 @@ public class PublicController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private AuthenticationManager authenticationManager;
+    @Autowired
+    private CustomUserDetailsServiceImpl userDetailsService;
+    @Autowired
+    private JwtUtil jwtUtil;
 
-    // localhost:8081/public/createUser
-    @PostMapping("/createUser")
-    public ResponseEntity<User> createUser(@RequestBody User user) {
+    @PostMapping("/signup")
+    public ResponseEntity<User> signup(@RequestBody User user) {
         logger.info("Received request to create a new user: {}", user);
 
         try {
@@ -68,4 +78,19 @@ public class PublicController {
         List<User> users = userService.getUserForSA();
        return new ResponseEntity<>(users, HttpStatus.OK);
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody User user) {
+        try{
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(user.getUserName(), user.getPassword()));
+            UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUserName());
+            String jwt = jwtUtil.generateToken(userDetails.getUsername());
+            return new ResponseEntity<>(jwt, HttpStatus.OK);
+        }catch (Exception e){
+            log.error("Exception occurred while createAuthenticationToken ", e);
+            return new ResponseEntity<>("Incorrect username or password", HttpStatus.BAD_REQUEST);
+        }
+    }
+
 }
